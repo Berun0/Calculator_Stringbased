@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  <style>
+    /* cheap reset */
+    * {margin: 0; box-sizing: border-box; font-family: sans-serif; line-height: 1;}
+
+    /* the display font */
+    @font-face {
+      font-family: 'DOTmatrix';
+      src:  url('led_counter.woff') format('woff');
+    }
+
+    /* let's float the calculator in the middle */
+    body {display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 4vw}
+
+    /* calculator styles */
+    .container {max-width: 400px;}
+    .keypanel {display: flex; flex-wrap: wrap; width: 100%;}
+    .display {width: 100%; background-color: rgb(202, 255, 219); border: 1px solid #edf1f0;text-align: right; padding: 5%; padding-top: calc(5% + 8px);font-size: 2em; font-family: 'DOTmatrix', Courier, monospace; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;} /* 
+    cut off overflow using ... 
+    padding-top: calc(5% + 8px) to verticaly center the digits in the display
+    */
+
+        /* button styles */
+        button {width: 25%; height: 30px; border-radius: 10px;}
+        .clear {background-color: rgb(168, 168, 168); color: white; position: relative;}
+        .calc {background-color: orange; color: white}
+        .op {background-color: rgb(253, 202, 107);}
+        /* .dig {} */
+
+  </style>
+</head>
+
+<body>
+  <section class="container">
+    <h2 class="display"></h2>
+    <div class="keypanel">
+      <button class="dig">7</button><button class="dig">8</button>
+      <button class="dig">9</button><button class="op">-</button>
+      <br>
+      <button class="dig">4</button><button class="dig">5</button>
+      <button class="dig">6</button><button class="op">/</button>
+      <br>
+      <button class="dig">1</button><button class="dig">2</button>
+      <button class="dig">3</button><button class="op">x</button>
+      <br>
+      <button class="clear" title="click to delete from the right. long press to zero.">←/C</button><button class="dig">0</button>
+      <button class="calc">=</button><button class="op">+</button>
+    </div>
+  </section>
+<script src="calculatestring.js"></script>
+</body>
+
+</html>
