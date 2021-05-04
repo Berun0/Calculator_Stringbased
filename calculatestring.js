@@ -19,7 +19,9 @@ Assemble a string from all the digit and operand inputs and calculate it, when h
 
 
 
+(function ()    // encapsulate via iife
 
+{
 
 var string = '0'  // the string that gets displayed and resolved arithmetically via calcResult()
 var start, end;  // used to calculate the time difference between mousedown and mouseup
@@ -137,3 +139,4 @@ function buttonClick(e) {
           }
         }
       }
+})()
